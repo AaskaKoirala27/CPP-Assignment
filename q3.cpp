@@ -1,25 +1,41 @@
-/*Write a C++ program to make such a pattern like a right angle triangle with the
-number increased by 1.
-Sample Output:
-Input number of rows: 4
-1
-2 3
-4 5 6
-7 8 9 10
-*/
+/* Write a C++ program to find the largest word in a given string.
+Example:
+Sample Input: C++ is a general-purpose programming language.
+Sample Output: programming */
 
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 int main(){
-    int noOfRows = 4;
-    int x = 1;
-    for(int i = 1 ; i <= noOfRows ; i++){
-        for(int j = 1; j <= i ; j++){
-            cout<<x<<" ";
-            x++;
+    int MAX_LENGTH =  100;
+    string sentence;
+    cout<<"enter a sentence separated by only single spaces : ";
+    getline(cin,sentence);
+
+    string max;
+    string current;
+    for(int i = 0; i< sentence.length(); i++){
+        if(sentence[i]==' '){
+            if(max.length()<current.length()){
+                max = current;
+            }
+            current.clear(); 
         }
-        cout<<endl;
+        else if(i+1 == sentence.length()){
+            current.push_back(sentence[i]);
+            if(max.length()<current.length()){
+                max = current;
+            }
+            current.clear(); 
+        }
+        else{
+            current.push_back(sentence[i]);
+        }
     }
+
+    cout<<max<<endl;
+
     return 0;
 }
