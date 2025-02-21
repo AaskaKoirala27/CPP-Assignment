@@ -1,25 +1,16 @@
-/*Write a C++ program to make such a pattern like a right angle triangle with the
-number increased by 1.
-Sample Output:
-Input number of rows: 4
-1
-2 3
-4 5 6
-7 8 9 10
-*/
+//Write a C++ program to implement a recursive function to get the nth Fibonacci number.
 
 #include <iostream>
 using namespace std;
+int fibonacci(int n) {
 
-int main(){
-    int noOfRows = 4;
-    int x = 1;
-    for(int i = 1 ; i <= noOfRows ; i++){
-        for(int j = 1; j <= i ; j++){
-            cout<<x<<" ";
-            x++;
-        }
-        cout<<endl;
-    }
+    if (n <= 1) return n; //base case
+    return fibonacci(n - 1) + fibonacci(n - 2); 
+}
+int main() {
+    int n;
+    cout << "Enter the value of n: ";
+    cin >> n;
+    cout << "The " << n << "th Fibonacci number is: " << fibonacci(n) << endl;
     return 0;
 }
