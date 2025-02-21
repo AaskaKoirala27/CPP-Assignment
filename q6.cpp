@@ -1,20 +1,18 @@
-/*Write a program in C++ to display the cube of the number up to an integer.
-Sample Output:
-Input the number of terms : 5
-Number is : 1 and the cube of 1 is: 1
-Number is : 2 and the cube of 2 is: 8
-Number is : 3 and the cube of 3 is: 27
-Number is : 4 and the cube of 4 is: 64
-Number is : 5 and the cube of 5 is: 125 */
+//Write a C++ program to find the two repeating elements in a given array of integers.
+
 #include <iostream>
 using namespace std;
 
 int main(){
-    int n;
-    cout << "Input the number of terms: ";
-    cin >> n;
-    for(int i = 1; i <= n; i++){
-        cout << "Number is: " << i << " and the cube of " << i << " is: " << i * i * i << endl;
+    int array[10]={1,5,3,6,2,4,10,15,1,90};
+
+    for(int i = 0; i < int(sizeof(array)/4); i++){
+        for(int j = 0 ; j < int(sizeof(array)/4)-1;j++){
+            if(array[i]==array[j] && i != j){
+                cout<<"the repeated number in array is : "<<array[i];
+                return 0;
+            }
+        }
     }
-    return 0;
+    cout<<array[1];
 }
