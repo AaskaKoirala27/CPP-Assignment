@@ -1,17 +1,24 @@
-/* Write a C++ program that accepts the user's first and last name and prints them in
-reverse order with a space between them.
-Input First Name: John
-Input Last Name: Doe
-Name in reverse is: Doe John */
+/* rite a program in C++ to display a pattern like a right angle triangle using an
+asterisk.
+Sample Output:
+Input number of rows: 5
+*
+**
+***
+****
+***** 
+*/
 
 #include <iostream>
 using namespace std;
+
 int main(){
-    string FirstName, LastName;
-    cout<<"Enter the first name: ";
-    cin>>FirstName;
-    cout<<"Enter the last name: ";
-    cin>>LastName;
-    cout<<"The name in reverse is: "<<LastName<<" "<<FirstName<<endl;
+
+    for(int i = 0 ; i < 5 ; i++){
+        for(int j = 0; j < i+1 ; j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
     return 0;
 }
